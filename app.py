@@ -75,7 +75,7 @@ def main():
         
         operation = st.selectbox(
             'Pilih Operasi:',
-            ('Erosi (Erosion)', 'Dilasi (Dilation)', 'Opening', 'Closing')
+            ('Erosi', 'Dilasi', 'Opening', 'Closing')
         )
 
         kernel_size = st.slider("Ukuran Kernel (Kekuatan)", 3, 25, 5, step=2)
@@ -108,7 +108,7 @@ def main():
         col1, col2 = st.columns(2)
 
         with col1:
-            st.subheader(" Sebelum (Input)")
+            st.subheader(" Sebelum ")
             st.image(img_to_process, caption=display_mode, use_container_width=True)
 
         with col2:
@@ -118,13 +118,13 @@ def main():
         # --- EXPLANATION SECTION ---
         st.markdown("---")
         with st.expander(" Penjelasan Teknis (Apa yang terjadi?)", expanded=True):
-            if operation == 'Erosi (Erosion)':
+            if operation == 'Erosi':
                 st.markdown("""
                 **Erosi** mengikis batas objek depan (biasanya piksel putih). 
                 * **Efek:** Objek menjadi lebih kecil/tipis.
                 * **Kegunaan:** Menghilangkan noise (bintik putih kecil) di latar belakang.
                 """)
-            elif operation == 'Dilasi (Dilation)':
+            elif operation == 'Dilasi':
                 st.markdown("""
                 **Dilasi** menambahkan piksel ke batas objek pada gambar.
                 * **Efek:** Objek menjadi lebih besar/tebal.
