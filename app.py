@@ -43,9 +43,9 @@ st.markdown("""
 # --- 3. HELPER FUNCTIONS ---
 def process_image(image, operation, kernel_size):
     kernel = np.ones((kernel_size, kernel_size), np.uint8)
-    if operation == 'Erosi (Erosion)':
+    if operation == 'Erosi':
         return cv2.erode(image, kernel, iterations=1)
-    elif operation == 'Dilasi (Dilation)':
+    elif operation == 'Dilasi':
         return cv2.dilate(image, kernel, iterations=1)
     elif operation == 'Opening':
         return cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel)
